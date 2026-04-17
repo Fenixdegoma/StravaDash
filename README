@@ -195,4 +195,35 @@ http://localhost:8000/index.html
   taskkill /F /IM python.exe
   ```
 - If you reach Strava API limits, simply re-run later — the script will only fetch new activities once fully synced
-- Do not manually edit files inside `/dashboard`
+- Do not manually edit files inside `/dashboard` (See below for exception)
+
+---
+
+## elevation.json
+
+The file below contains landmark elevation data used by the dashboard:
+
+`dashboard/elevation.json`
+
+It is used for the Elevation comparison stats (e.g. *"You've climbed higher than..."* and *"Next target..."*).
+
+**Note:** This file is currently UK/Britain-focused, as the project was originally built for personal use.
+
+It includes:
+- Top 100 British buildings
+- Top 100 British mountains
+- Top 100 world buildings
+- Top 100 world mountains
+
+### Customising / Localising
+
+You can add your own landmarks (mountains/buildings/etc.) to localise it to your own country or region.
+
+Each entry must follow this format:
+
+```json
+{
+  "name": "Example Landmark",
+  "height_m": 1234,
+  "type": "mountain"
+}
