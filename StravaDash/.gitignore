@@ -1,6 +1,5 @@
 strava.db
 strava_auth.txt
-dashboard/*.json
 __pycache__/
 *.pyc
 .env
